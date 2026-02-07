@@ -86,7 +86,7 @@ func ParseMinutes() {
 	var minutes uint64
 	fmt.Scan(&minutes)
 
-	fmt.Printf("%d мин - это %d час %d минут.", minutes, minutes / 60, minutes % 60)
+	fmt.Printf("%d мин - это %d час %d минут.", minutes, minutes/60, minutes%60)
 }
 
 func NextAndPrev() {
@@ -95,4 +95,29 @@ func NextAndPrev() {
 
 	fmt.Printf("Следующее за числом %d число: %d\n", n, n+1)
 	fmt.Printf("Для числа %d предыдущее число: %d", n, n-1)
+}
+
+func GetDigitSum() {
+	var x int64
+	fmt.Scan(&x)
+	var sum int64
+
+	sum += x / 100
+	sum += x % 10
+	sum += (x / 10) % 10
+
+	fmt.Print(sum)
+}
+
+func ReverseDigit() {
+	var x int64
+	fmt.Scan(&x)
+	var sum int64
+	var number fl
+
+	sum += x / 100
+	sum += ((x / 10) % 10) * 10
+	sum += (x % 10) * 100
+
+	fmt.Print(sum)
 }
