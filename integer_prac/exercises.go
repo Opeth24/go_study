@@ -113,7 +113,6 @@ func ReverseDigit() {
 	var x int64
 	fmt.Scan(&x)
 	var sum int64
-	var number fl
 
 	sum += x / 100
 	sum += ((x / 10) % 10) * 10
