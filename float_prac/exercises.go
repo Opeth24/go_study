@@ -54,3 +54,26 @@ func MaxDigit() {
 	res = max(a / 100, a % 10, a / 10 % 10)
 	fmt.Print(res)
 }
+
+func CalculateDiscount() {
+	var price, total float64
+	var discount uint16
+
+	fmt.Scan(&price, &discount)
+	total = price - (price / 100 * float64(discount))
+
+	fmt.Print(total)
+}
+
+
+func IfCondition() {
+    x := 10 // Внешняя переменная 'x'
+    fmt.Println("Внешняя переменная x:", x)
+
+    if true {
+        x := 5 // Затеняющая переменная 'x'
+        fmt.Println("Внутренняя переменная x:", x)
+    }
+
+    fmt.Println("Внешняя переменная x после внутренней области видимости:", x)
+}

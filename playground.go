@@ -1,9 +1,9 @@
 package main
 
 import (
-	integerprac "example.com/go_study/float_prac"
+	condition "example.com/go_study/condition"
 )
 
 func main() {
-	integerprac.MaxDigit()
+	condition.QuadraticEquation()
 }
