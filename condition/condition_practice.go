@@ -121,3 +121,65 @@ func QuadraticEquation() {
 		fmt.Print(x)
 	}
 }
+
+
+func SymmetricNum() {
+	    var a int64
+    fmt.Scan(&a)
+    
+    if ((a % 10) == (a / 1000)) && (((a / 100) % 10) == (a / 10) % 10) {
+        fmt.Print("YES")
+    } else {
+        fmt.Print("NO")
+    }
+}
+
+func Homework() {
+	var k, m int64
+    fmt.Scan(&k, &m)
+
+	fmt.Print(k / 2)
+    
+    fmt.Print(math.Ceil(float64(k) / float64(m)))
+}
+
+func InterestingNum(){
+	var x int64
+    fmt.Scan(&x)
+    a := x / 100
+    b := x / 10 % 10
+    c := x % 10
+    
+    maxValue := max(a, b, c)
+	minValue := min(a, b, c)
+	midValue := a + b + c - minValue - maxValue
+    if float64(midValue) == math.Abs(float64(maxValue) - float64(minValue)) {
+        fmt.Print("Число интересное")
+    } else {
+        fmt.Print("Число неинтересное")
+    }
+}
+
+func FootballCheck() {
+	var age uint8
+    var sex string
+    fmt.Scan(&age, &sex)
+    
+    if sex == "m" && age >= 12 && age <= 18 {
+        fmt.Print("YES")
+    } else {
+        fmt.Print("NO")
+    }
+}
+
+func BicycleRent() {
+	var rent, freeMinutes, duration, tax uint64
+    fmt.Scan(&rent, &freeMinutes, &duration, &tax)
+    
+    var overLimit uint64 = 0 
+    if duration > freeMinutes{
+        overLimit = duration - freeMinutes
+    }
+    total := rent + tax * overLimit
+    fmt.Print(total)
+}

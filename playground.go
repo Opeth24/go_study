@@ -1,9 +1,9 @@
 package main
 
 import (
-	condition "example.com/go_study/condition"
+	cycle "example.com/go_study/cycle_prac"
 )
 
 func main() {
-	condition.QuadraticEquation()
+	cycle.CountMax()
 }
