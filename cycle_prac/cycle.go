@@ -68,3 +68,23 @@ func CountMax() {
     }
     fmt.Println(count)
 }
+
+func CountSameDigit() {
+    var x, y, d, dd int
+    fmt.Scan(&x, &y)
+    
+    for x != 0 {
+        d = x % 10
+        second := y
+        for second != 0 {
+            dd = second % 10
+            if d == dd {
+                defer fmt.Printf("%d ", d)
+                break
+            }
+            second = second / 10
+        }
+        x = x / 10
+    }
+}
+

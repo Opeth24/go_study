@@ -1,9 +1,11 @@
 package main
 
 import (
-	cycle "example.com/go_study/cycle_prac"
+	array "example.com/go_study/array"
+	// cycle "example.com/go_study/cycle_prac"
 )
 
 func main() {
-	cycle.CountMax()
+	// cycle.CountSameDigit()
+	array.ThirdElem()
 }
