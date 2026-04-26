@@ -183,3 +183,63 @@ func BicycleRent() {
     total := rent + tax * overLimit
     fmt.Print(total)
 }
+
+
+func Pifagor() {
+	var a,b,c uint32
+	fmt.Scan(&a, &b, &c)
+
+	if c * c == b * b + a * a {
+		fmt.Print("Прямоугольный")
+	} else {
+		fmt.Print("Непрямоугольный")
+	}
+	
+}
+
+
+func MinCount() {
+	var n, localMin, current, total, result int64
+    fmt.Scan(&n)
+    
+    total = 1
+	fmt.Scan(&current)
+	localMin = current
+    for range n - 1 {
+        fmt.Scan(&current)
+        if current < localMin {
+            result = max(total, result)
+            total = 1
+            localMin = current
+        } else if current == localMin {
+            total += 1
+        }
+    }
+    result = max(total, result)
+    fmt.Print(result)
+}
+
+func MaxDivBy7() {
+	var a, b, result int64
+    fmt.Scan(&a, &b)
+    if b % 7 == 0 {
+        fmt.Print(b)
+        return
+    }
+    
+    for i := b; i >= a; i-- {
+        fmt.Printf("i = %d\n", i)
+        result = i
+        if i < a {
+            fmt.Print("NO")
+            return
+        }
+    }
+    fmt.Print(result - 1)
+}
+
+func Add(x, y int) (result int) {
+    result = x + y;
+    
+    return;
+}

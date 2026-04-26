@@ -88,3 +88,13 @@ func CountSameDigit() {
     }
 }
 
+func SumInt(args ...int) (int, int) {
+    length := len(args)
+    sum := 0
+    
+    for _, elem := range args {
+        sum += elem
+    }
+    return length, sum
+}
+
