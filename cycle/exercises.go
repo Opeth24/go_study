@@ -1,6 +1,9 @@
 package cycle
 
-import "fmt"
+import (
+	"fmt"
+	"math"
+)
 
 
 func Cycle1() {
@@ -25,4 +28,14 @@ func Cycle2() {
         years++
     }
     fmt.Print(years)
+}
+
+
+func TwoPowers() {
+    var n float64
+    fmt.Scan(&n)
+    
+    for i := 0.0; math.Pow(2.0, i) < n; i++ {
+        fmt.Println(math.Pow(2.0, i))
+    }
 }
