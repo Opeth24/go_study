@@ -2,10 +2,9 @@ package main
 
 import (
 	// array "example.com/go_study/array"
-	"fmt"
-
+	s "example.com/go_study/stringsPractice"
 	// cycle "example.com/go_study/cycle"
-	structures "example.com/go_study/structures"
+	// structures "example.com/go_study/structures"
 	// "example.com/go_study/condition"
 )
 
@@ -17,7 +16,10 @@ func main() {
 	// fmt.Print(a, b)
 	// cycle.Cycle1()
 
-	w := structures.Weapon{On: false, Ammo: 5, Power: 10}
-	fmt.Println(w.Shoot())
-	fmt.Println(w.RideBike())
+	// w := structures.Weapon{On: false, Ammo: 5, Power: 10}
+	// fmt.Println(w.Shoot())
+	// fmt.Println(w.RideBike())
+
+	s.CheckPassword()
+
 }
