@@ -6,6 +6,7 @@ import (
 	// cycle "example.com/go_study/cycle"
 	// structures "example.com/go_study/structures"
 	// "example.com/go_study/condition"
+	// h "example.com/go_study/handleerrors"
 )
 
 func main() {
@@ -20,6 +21,7 @@ func main() {
 	// fmt.Println(w.Shoot())
 	// fmt.Println(w.RideBike())
 
-	s.CheckPassword()
-
+	// s.CheckPassword()
+	// h.HandleErrors()
+	s.SquarePrint()
 }

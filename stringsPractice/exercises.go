@@ -3,7 +3,9 @@ package stringPractice
 import (
 	"bufio"
 	"fmt"
+	"math"
 	"os"
+	"strconv"
 	"strings"
 	"unicode"
 )
@@ -124,4 +126,54 @@ func CheckPassword() {
 	} else {
 		fmt.Print("Ok")
 	}
+}
+
+func StringJoin() {
+	var data string
+	fmt.Scan(&data)
+	var result strings.Builder
+	runes := []rune(data)
+
+	for idx, elem := range runes {
+		result.WriteRune(elem)
+		if idx == len(runes) - 1 {
+			break
+		} 
+		result.WriteRune('*')
+	}
+	fmt.Print(result.String())
+
+}
+
+func SquarePrint() {
+	var data string
+	_, err := fmt.Scan(&data)
+	if err != nil {
+		panic("panic")
+	}
+	for _, elem := range data {
+		currentInt, err := strconv.Atoi(string(elem))
+		if err != nil {
+			panic("panic")
+		}
+		fmt.Printf("%v", currentInt * currentInt)
+	}
+
+}
+
+const(
+	k = 10.0
+	p = 20.0
+	v = 30.0
+)
+func M() float64 {
+	return 	p * v
+}
+
+func W() float64 {
+	return math.Sqrt(k / M())
+} 
+
+func T() float64 {
+	return 6 / W()
 }
