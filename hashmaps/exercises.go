@@ -38,7 +38,39 @@ func MemoSimple() {
 		fmt.Print(cache[key], " ")
 	}
 
+}
 
+
+func CityPopulation() {
+	groupCity := map[int][]string{
+		10: {},
+		100: {"Moscow", "Ekaterinburg", "Saint-Petersburg"},
+	}
+	population := map[string]int{
+		"Ekaterinburg": 100,
+		"Tashkent": 99,
+		"Vladivostok": 58,
+	}
+
+	cityKeys := map[string]struct{}{}
+	for _, city := range groupCity[100] {
+		cityKeys[city] = struct{}{}
+
+	}
+
+	for key := range population {
+		if _, ok := cityKeys[key]; !ok {
+			delete(population, key)
+		}
+	}
+	fmt.Println(population)
+
+	// newPopulation := map[string]int{}
+	// for _, city := range groupCity[100] {
+	// 	newPopulation[city] = 100
+	// }
+	// population = newPopulation
+	// fmt.Println(population)
 }
 
 func work(x int) int {

@@ -25,5 +25,5 @@ func main() {
 	// s.CheckPassword()
 	// h.HandleErrors()
 	// s.SquarePrint()
-	hashmap.MemoSimple()
+	hashmap.CityPopulation()
 }

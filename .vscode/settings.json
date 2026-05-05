@@ -1,0 +1,37 @@
+{
+    //formatting
+    "editor.mouseWheelZoom": true,
+    "editor.suggest.snippetsPreventQuickSuggestions": true,
+    "editor.tabCompletion": "on",
+    "go.toolsEnvVars": {
+        "GOBIN": "${workspaceFolder}/bin"
+    },
+    "gopls": {
+        "formatting.gofumpt": true,
+        "ui.completion.usePlaceholders": true,
+        "ui.diagnostic.staticcheck": true,
+        "ui.codelenses": {
+            "gc_details": false,
+            "generate": true,
+            "regenerate_cgo": true,
+            "test": true,
+            "tidy": true,
+            "upgrade_dependency": true,
+            "vendor": true
+        },
+        "ui.documentation.linksInHover": true
+    },
+    "go.alternateTools": {
+        "gopls": "gopls",
+        "go-langserver": "gopls"
+    },
+    "emeraldwalk.runonsave": {
+        "commands": [
+            {
+                "match": "\\.go$",
+                "cmd": "PATH=$PATH:${workspaceFolder}/bin golines --base-formatter=gofmt -m 120 ${file} -w",
+                "isAsync": true
+            }
+        ]
+    },
+}
