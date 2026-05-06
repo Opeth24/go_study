@@ -10,13 +10,12 @@ import (
 )
 
 func HashmapTest() {
-	var s = []map[int]string{}
+	s := []map[int]string{}
 	fmt.Print(s)
 }
 
-
 func MemoSimple() {
-	var cache = map[int]int{}
+	cache := map[int]int{}
 	reader := bufio.NewReader(os.Stdin)
 	data, err := reader.ReadString('\n')
 	data = strings.Trim(data, "\r\n")
@@ -31,32 +30,29 @@ func MemoSimple() {
 		if err != nil {
 			panic("convert panic")
 		}
-		
+
 		if _, ok := cache[key]; !ok {
 			cache[key] = work(key)
 		}
 
 		fmt.Print(cache[key], " ")
 	}
-
 }
-
 
 func CityPopulation() {
 	groupCity := map[int][]string{
-		10: {},
+		10:  {},
 		100: {"Moscow", "Ekaterinburg", "Saint-Petersburg"},
 	}
 	population := map[string]int{
 		"Ekaterinburg": 100,
-		"Tashkent": 99,
-		"Vladivostok": 58,
+		"Tashkent":     99,
+		"Vladivostok":  58,
 	}
 
 	cityKeys := map[string]struct{}{}
 	for _, city := range groupCity[100] {
 		cityKeys[city] = struct{}{}
-
 	}
 
 	for key := range population {
@@ -77,7 +73,6 @@ func CityPopulation() {
 func work(x int) int {
 	return x * 10
 }
-
 
 func sanitazeString(s string) int64 {
 	var res []rune
@@ -123,4 +118,29 @@ func AddingFirst(x, y string) int64 {
 
 func Adding(x, y string) int64 {
 	return sanitazeString(x) + sanitazeString(y)
+}
+
+func ParseCSV() {
+	scanner := bufio.NewScanner(os.Stdin)
+	scanner.Scan()
+	data := scanner.Text()
+	parts := strings.Split(data, ";")
+	if len(parts) < 2 {
+		return
+	}
+	var nums [2]float64
+	for i := range 2 {
+		parts[i] = strings.ReplaceAll(parts[i], " ", "")
+		parts[i] = strings.ReplaceAll(parts[i], ",", ".")
+		val, err := strconv.ParseFloat(parts[i], 64)
+		if err != nil {
+			fmt.Fprintf(os.Stderr, "parse error: %v\n", err)
+			return
+		}
+		nums[i] = val
+	}
+	
+	if nums[1] != 0 {
+		fmt.Printf("%.4f\n", nums[0]/nums[1])
+	}
 }
