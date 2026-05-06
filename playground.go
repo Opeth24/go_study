@@ -7,6 +7,8 @@ import (
 	// structures "example.com/go_study/structures"
 	// "example.com/go_study/condition"
 	// h "example.com/go_study/handleerrors"
+	"fmt"
+
 	hashmap "example.com/go_study/hashmaps"
 )
 
@@ -25,5 +27,7 @@ func main() {
 	// s.CheckPassword()
 	// h.HandleErrors()
 	// s.SquarePrint()
-	hashmap.CityPopulation()
+	// hashmap.CityPopulation()
+	result := hashmap.Adding("FDGH80", "mbknb20*&^%")
+	fmt.Print(result)
 }

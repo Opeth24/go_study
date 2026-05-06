@@ -6,6 +6,7 @@ import (
 	"os"
 	"strconv"
 	"strings"
+	"unicode"
 )
 
 func HashmapTest() {
@@ -75,4 +76,51 @@ func CityPopulation() {
 
 func work(x int) int {
 	return x * 10
+}
+
+
+func sanitazeString(s string) int64 {
+	var res []rune
+	for _, r := range s {
+		if unicode.IsDigit(r) {
+			res = append(res, r)
+		}
+	}
+	num, err := strconv.ParseInt(string(res), 10, 64)
+	if err != nil {
+		return 0
+	}
+	return num
+}
+
+func AddingFirst(x, y string) int64 {
+	xRunes := []rune(x)
+	yRunes := []rune(y)
+
+	temp := []rune{}
+	for _, elem := range xRunes {
+		if unicode.IsDigit(elem) {
+			temp = append(temp, elem)
+		}
+	}
+	xInt, err := strconv.Atoi(string(temp))
+	if err != nil {
+		panic("can't convert elem x")
+	}
+
+	temp = []rune{}
+	for _, elem := range yRunes {
+		if unicode.IsDigit(elem) {
+			temp = append(temp, elem)
+		}
+	}
+	yInt, err := strconv.Atoi(string(temp))
+	if err != nil {
+		panic("can't convert elem y")
+	}
+	return int64(xInt + yInt)
+}
+
+func Adding(x, y string) int64 {
+	return sanitazeString(x) + sanitazeString(y)
 }
