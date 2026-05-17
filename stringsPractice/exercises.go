@@ -136,9 +136,9 @@ func StringJoin() {
 
 	for idx, elem := range runes {
 		result.WriteRune(elem)
-		if idx == len(runes) - 1 {
+		if idx == len(runes)-1 {
 			break
-		} 
+		}
 		result.WriteRune('*')
 	}
 	fmt.Print(result.String())
@@ -156,23 +156,24 @@ func SquarePrint() {
 		if err != nil {
 			panic("panic")
 		}
-		fmt.Printf("%v", currentInt * currentInt)
+		fmt.Printf("%v", currentInt*currentInt)
 	}
 
 }
 
-const(
+const (
 	k = 10.0
 	p = 20.0
 	v = 30.0
 )
+
 func M() float64 {
-	return 	p * v
+	return p * v
 }
 
 func W() float64 {
 	return math.Sqrt(k / M())
-} 
+}
 
 func T() float64 {
 	return 6 / W()

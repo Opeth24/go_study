@@ -8,7 +8,8 @@ import (
 	// "example.com/go_study/condition"
 	// h "example.com/go_study/handleerrors"
 
-	i "example.com/go_study/interfacePractice"
+	// i "example.com/go_study/interfacePractice"
+	t "example.com/go_study/TimeWork"
 )
 
 func main() {
@@ -17,5 +18,6 @@ func main() {
 	// x := lambda.DeleteOddDigit(uint(72))
 	// fmt.Print(x)
 
-	i.MeanMarks()
+	// i.DataParse()
+	t.ParseDinner()
 }

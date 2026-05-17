@@ -11,7 +11,7 @@ func DeleteOddDigit(digit uint) uint {
 	// 			result = append(result, num)
 	// 		}
 	// 	}
-		
+
 	// 	y := string(result)
 	// 	if y == "" {
 	// 		y = "100"
@@ -31,7 +31,7 @@ func DeleteOddDigit(digit uint) uint {
 		var result []rune
 		for _, r := range xStr {
 			digit := uint64(r - '0')
-			if digit != 0 && digit % 2 == 0 {
+			if digit != 0 && digit%2 == 0 {
 				result = append(result, r)
 			}
 		}

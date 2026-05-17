@@ -105,7 +105,7 @@ func QuadraticEquation() {
 	var a, b, c float64
 	fmt.Scan(&a, &b, &c)
 
-	d := math.Pow(b, 2) - 4.0 * a * c
+	d := math.Pow(b, 2) - 4.0*a*c
 
 	if d < 0 {
 		return
@@ -122,124 +122,121 @@ func QuadraticEquation() {
 	}
 }
 
-
 func SymmetricNum() {
-	    var a int64
-    fmt.Scan(&a)
-    
-    if ((a % 10) == (a / 1000)) && (((a / 100) % 10) == (a / 10) % 10) {
-        fmt.Print("YES")
-    } else {
-        fmt.Print("NO")
-    }
+	var a int64
+	fmt.Scan(&a)
+
+	if ((a % 10) == (a / 1000)) && (((a / 100) % 10) == (a/10)%10) {
+		fmt.Print("YES")
+	} else {
+		fmt.Print("NO")
+	}
 }
 
 func Homework() {
 	var k, m int64
-    fmt.Scan(&k, &m)
+	fmt.Scan(&k, &m)
 
 	fmt.Print(k / 2)
-    
-    fmt.Print(math.Ceil(float64(k) / float64(m)))
+
+	fmt.Print(math.Ceil(float64(k) / float64(m)))
 }
 
-func InterestingNum(){
+func InterestingNum() {
 	var x int64
-    fmt.Scan(&x)
-    a := x / 100
-    b := x / 10 % 10
-    c := x % 10
-    
-    maxValue := max(a, b, c)
+	fmt.Scan(&x)
+	a := x / 100
+	b := x / 10 % 10
+	c := x % 10
+
+	maxValue := max(a, b, c)
 	minValue := min(a, b, c)
 	midValue := a + b + c - minValue - maxValue
-    if float64(midValue) == math.Abs(float64(maxValue) - float64(minValue)) {
-        fmt.Print("Число интересное")
-    } else {
-        fmt.Print("Число неинтересное")
-    }
+	if float64(midValue) == math.Abs(float64(maxValue)-float64(minValue)) {
+		fmt.Print("Число интересное")
+	} else {
+		fmt.Print("Число неинтересное")
+	}
 }
 
 func FootballCheck() {
 	var age uint8
-    var sex string
-    fmt.Scan(&age, &sex)
-    
-    if sex == "m" && age >= 12 && age <= 18 {
-        fmt.Print("YES")
-    } else {
-        fmt.Print("NO")
-    }
+	var sex string
+	fmt.Scan(&age, &sex)
+
+	if sex == "m" && age >= 12 && age <= 18 {
+		fmt.Print("YES")
+	} else {
+		fmt.Print("NO")
+	}
 }
 
 func BicycleRent() {
 	var rent, freeMinutes, duration, tax uint64
-    fmt.Scan(&rent, &freeMinutes, &duration, &tax)
-    
-    var overLimit uint64 = 0 
-    if duration > freeMinutes{
-        overLimit = duration - freeMinutes
-    }
-    total := rent + tax * overLimit
-    fmt.Print(total)
+	fmt.Scan(&rent, &freeMinutes, &duration, &tax)
+
+	var overLimit uint64 = 0
+	if duration > freeMinutes {
+		overLimit = duration - freeMinutes
+	}
+	total := rent + tax*overLimit
+	fmt.Print(total)
 }
 
-
 func Pifagor() {
-	var a,b,c uint32
+	var a, b, c uint32
 	fmt.Scan(&a, &b, &c)
 
-	if c * c == b * b + a * a {
+	if c*c == b*b+a*a {
 		fmt.Print("Прямоугольный")
 	} else {
 		fmt.Print("Непрямоугольный")
 	}
-	
-}
 
+}
 
 func MinCount() {
 	var n, localMin, current, total, result int64
-    fmt.Scan(&n)
-    
-    total = 1
+	fmt.Scan(&n)
+
+	total = 1
 	fmt.Scan(&current)
 	localMin = current
-    for range n - 1 {
-        fmt.Scan(&current)
-        if current < localMin {
-            result = max(total, result)
-            total = 1
-            localMin = current
-        } else if current == localMin {
-            total += 1
-        }
-    }
-    result = max(total, result)
-    fmt.Print(result)
+	for range n - 1 {
+		fmt.Scan(&current)
+		if current < localMin {
+			result = max(total, result)
+			total = 1
+			localMin = current
+		} else if current == localMin {
+			total += 1
+		}
+	}
+	result = max(total, result)
+	fmt.Print(result)
 }
 
 func MaxDivBy7() {
 	var a, b, result int64
-    fmt.Scan(&a, &b)
-    if b % 7 == 0 {
-        fmt.Print(b)
-        return
-    }
-    
-    for i := b; i >= a; i-- {
-        fmt.Printf("i = %d\n", i)
-        result = i
-        if i < a {
-            fmt.Print("NO")
-            return
-        }
-    }
-    fmt.Print(result - 1)
+	fmt.Scan(&a, &b)
+	if b%7 == 0 {
+		fmt.Print(b)
+		return
+	}
+
+	for i := b; i >= a; i-- {
+		fmt.Printf("i = %d\n", i)
+		result = i
+		if i < a {
+			fmt.Print("NO")
+			return
+		}
+	}
+	fmt.Print(result - 1)
 }
 
 func Add(x, y int) (result int) {
-    result = x + y;
-    
-    return;
+	result = x + y
+
+	return
 }

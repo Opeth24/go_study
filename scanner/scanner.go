@@ -22,7 +22,6 @@ func Scanner_learn() {
 	fmt.Println(second)
 	fmt.Println(first)
 
-
 	var s1 string
 	var s2 string
 	var s3 string

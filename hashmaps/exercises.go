@@ -139,7 +139,7 @@ func ParseCSV() {
 		}
 		nums[i] = val
 	}
-	
+
 	if nums[1] != 0 {
 		fmt.Printf("%.4f\n", nums[0]/nums[1])
 	}

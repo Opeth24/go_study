@@ -2,7 +2,6 @@ package handleerrors
 
 import "fmt"
 
-
 func HandleErrors() {
 	var a, b int
 	_, err := fmt.Scan(&a)
